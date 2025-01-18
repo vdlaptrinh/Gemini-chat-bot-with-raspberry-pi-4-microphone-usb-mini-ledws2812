@@ -7,10 +7,10 @@ from text_to_speech import text_to_speech
 
 
 # Enter your Assistant ID here.
-ASSISTANT_ID = "asst_wjqi72pbXeufKW18mVjk9JV6"
+ASSISTANT_ID = ""
 
 # Make sure your API key is set as an environment variable.
-client = OpenAI(api_key="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")
+client = OpenAI(api_key="")
 # Set up logging
 logging.basicConfig(level=logging.INFO)
 filename = "respond.mp3"
