@@ -1,4 +1,4 @@
-# Voice-chatbot-Pi-zero2w-ReSpeaker-2-Microphone
+# Voice-chatbot-Pi-4-Microphone-USB-mini-Led-ws2812
 Project Trợ lý ảo Tiếng Việt (giống như google home, alexa, maika...)
 - Cần điền api key vào file config.py: picovoive, gemini, HASS IP, LONG TOKEN, my_city, openweather
 - Từ khoá đánh thức: picovoice
