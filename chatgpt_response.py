@@ -4,13 +4,14 @@ import logging
 import random
 from openai import OpenAI
 from text_to_speech import text_to_speech
-
+from config import OPENAI_ASSISTANT_ID
+from config import OPENAI_API_KEY
 
 # Enter your Assistant ID here.
-ASSISTANT_ID = ""
-
+ASSISTANT_ID = OPENAI_ASSISTANT_ID
+CHATGPT_API_KEY = OPENAI_API_KEY
 # Make sure your API key is set as an environment variable.
-client = OpenAI(api_key="")
+client = OpenAI(api_key=CHATGPT_API_KEY)
 # Set up logging
 logging.basicConfig(level=logging.INFO)
 filename = "respond.mp3"
