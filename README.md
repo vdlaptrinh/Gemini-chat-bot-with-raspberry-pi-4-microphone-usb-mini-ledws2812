@@ -17,7 +17,7 @@ Project Trợ lý ảo Tiếng Việt (giống như google home, alexa, maika...
 - TTS: EDGE-TTS
 
 #Phần cứng sử dụng: Raspberry pi4, Microphone USB mini, Loa (AUX), Led WS2812
-
+- Chương trình test, thời gian sử dụng thực tế chưa nhiều. Các bạn dùng có thấy lỗi gì vui lòng cho tôi biết. Thanks
 #Button
 - Chương trình có 4 nút nhấn: + - wakeup stop
 - tương ứng GPIO 6 26 5 25
