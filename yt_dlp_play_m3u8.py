@@ -1,13 +1,6 @@
 import yt_dlp
-import subprocess, os
-from text_to_speech import text_to_speech
-filename = "respond.mp3"
-
-def play(filename):
-  #playsound.playsound(filename)
-  subprocess.call(["ffplay", "-nodisp", "-autoexit", filename])
-  os.remove(filename)
-
+#import subprocess
+#from src.text_to_speech import text_to_speech
 def play_m3u8(song_name):
     # Tìm kiếm bài hát trên YouTube
     search_query = f"ytsearch:{song_name}"
@@ -38,26 +31,27 @@ def play_m3u8(song_name):
                     audio_url = audio_formats[0]['url']
                     #print(f"Tìm thấy video: {video_info['title']} - Tải xuống từ URL: {audio_url}")
                     #print(f"Tìm thấy video: {video_info['title']}")
-                    text_to_speech(video_info['title'],filename)
-                    play(filename)
+                    answer_text = video_info['title']
+                    #text_to_speech(video_info['title'],"vi")
                 else:
-                    text_to_speech("Không tìm thấy định dạng âm thanh",filename)
+                    #text_to_speech("Không tìm thấy định dạng âm thanh","vi")
                     #print("Không tìm thấy định dạng âm thanh cho video này.")
-                    play(filename)
-                    return
+                    answer_text = "Không tìm thấy định dạng âm thanh"
+                    audio_url = None
+                    return answer_text, audio_url
             else:
-                text_to_speech("Không tìm thấy bài này trong kết quả tìm kiếm.",filename)
-                play(filename)
+                #text_to_speech("Không tìm thấy bài này trong kết quả tìm kiếm.","vi")
                 #print("Không tìm thấy bài này trong kết quả tìm kiếm.")
-                return
+                answer_text = "Không tìm thấy bài này trong kết quả tìm kiếm."
+                audio_url = None
+                return answer_text, audio_url
         except Exception as e:
             print(f"Lỗi khi trích xuất thông tin: {e}")
-            text_to_speech(f"Lỗi khi trích xuất thông tin: {e}",filename)
-            play(filename)
-            return
+            
+            return 
     print("Đang phát bài hát...")
-    subprocess.call(["ffplay", "-nodisp", "-autoexit", audio_url])
-    return
+    return answer_text, audio_url
+    #subprocess.call(["ffplay", "-nodisp", "-autoexit", audio_url])
 if __name__ == "__main__":
     song_name = input("Nhập tên bài hát: ")
     play_m3u8(song_name)

@@ -18,6 +18,14 @@ Project Trợ lý ảo Tiếng Việt (giống như google home, alexa, maika...
 
 #Phần cứng sử dụng: Raspberry pi4, Microphone USB mini, Loa (AUX), Led WS2812
 
+#Button
+- Chương trình có 4 nút nhấn: + - wakeup stop
+- tương ứng GPIO 6 26 5 25
+- Trong lúc loa đang phát tiếng, có thể bấm nút stop để ngừng
+- nút + tăng âm lượng
+- nút - giảm âm lượng
+- nút wakeup để gọi bot, sau khi nghe ding có thể ra lệnh
+
 #pip list
 pi@pi4202412:~ $ pip list
 Package                                  Version
